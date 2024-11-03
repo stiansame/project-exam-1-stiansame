@@ -1,0 +1,25 @@
+/* universal */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --menu-bg: #e9b9b9;
+    --secondaryColor: #e2520f;
+}
+
+html {
+    margin: 0 auto;
+    max-width: 1140px;
+    font-size: 14px;
+    background-color: var(--menu-bg);
+    background: linear-gradient(#ececf5 0%, #f89afc 75%);
+    background-size: cover;
+    color: rgb(66, 66, 66);
+    min-height: 100dvh;
+}
