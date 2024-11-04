@@ -27,10 +27,7 @@ html {
 
 }
 
-div {
-    border: solid 1px black;
-    padding: 1rem;
-}
+
 
 body {
     outline: solid 1px black;
@@ -38,8 +35,6 @@ body {
 }
 
 nav {
-    border: solid 1px blue;
-    font-family: 'Roboto Condensed';
     display: grid;
     position: absolute;
     text-align: left;
@@ -52,11 +47,12 @@ nav {
     transform: scale(1, 0);
     transform-origin: top;
     transition: all 0.4s ease-in-out;
+    font-family: 'Roboto Condensed';
 }
 
 .title {
     font-family: 'pattaya', sans-serif;
-    font-size: clamp(1.7rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 4.5vw, 5rem);
     color: rgb(105, 4, 88);
     align-self: center;
 }
@@ -68,11 +64,14 @@ nav {
 
 .logo {
     height: 100%;
+
 }
 
 .logo img {
-    max-height: 6rem;
+    max-height: 8rem;
     min-height: 3rem;
+    border-radius: 50%;
+    border: 1px solid rgb(105, 4, 88);
 }
 
 footer {
@@ -95,8 +94,7 @@ header {
     position: relative;
     top: 0;
     z-index: 100;
-    padding: 1rem 0;
-
+    border: 1px solid black
 }
 
 nav ul,
@@ -120,16 +118,19 @@ nav li,
         align-self: center;
         grid-area: 1/2/2/4;
         z-index: 100;
+        font-family: 'Roboto Condensed';
+
+
     }
 
     nav ul {
         display: flex;
         justify-content: right;
         align-items: center;
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 1.6rem;
+        font-size: 2rem;
         z-index: 2;
-        column-gap: 0.5rem;
+        column-gap: 1rem;
+
     }
 
     header {
