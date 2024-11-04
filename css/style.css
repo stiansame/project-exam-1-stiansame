@@ -23,6 +23,7 @@ html {
     color: rgb(66, 66, 66);
     min-height: 100dvh;
     border: solid 1px red;
+    font-family: 'courier prime';
 
 }
 
@@ -38,7 +39,40 @@ body {
 
 nav {
     border: solid 1px blue;
-    padding: 1rem;
+    font-family: 'Roboto Condensed';
+    display: grid;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-bottom: rgb(231, 29, 171) solid 2px;
+    width: 100%;
+    z-index: 100;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: all 0.4s ease-in-out;
+}
+
+.title {
+    font-family: 'pattaya', sans-serif;
+    font-size: clamp(1.7rem, 4vw, 3.5rem);
+    color: rgb(105, 4, 88);
+    align-self: center;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0.5rem 0.5rem rgb(105, 4, 88));
+    cursor: pointer;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo img {
+    max-height: 6rem;
+    min-height: 3rem;
 }
 
 footer {
@@ -52,3 +86,75 @@ footer {
     padding: 1rem;
 
 }
+
+header {
+    display: grid;
+    grid-template-columns: auto minmax(200px, 1fr);
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+
+}
+
+nav ul,
+nav li,
+.footer_nav ul,
+.footer_nav li {
+    list-style: none;
+    margin: 0;
+    display: block;
+    padding-left: 0;
+}
+
+
+/*----------------------------------RESPONSIVE------------------------*/
+@media screen and (min-width: 870px) {
+    /*--NAVBAR--*/
+
+    nav {
+        all: unset;
+        justify-content: flex-end;
+        align-self: center;
+        grid-area: 1/2/2/4;
+        z-index: 100;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.6rem;
+        z-index: 2;
+        column-gap: 0.5rem;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: auto minmax(200px, 1fr) auto;
+    }
+
+    .logo {
+        grid-area: 1/1/2/2;
+        height: fit-content;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .title {
+        grid-area: 1/2/2/3;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .active,
+    nav .nav-item:hover {
+        border-radius: 1rem;
+    }
