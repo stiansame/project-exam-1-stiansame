@@ -22,4 +22,13 @@ html {
     background-size: cover;
     color: rgb(66, 66, 66);
     min-height: 100dvh;
+    outline: solid 1px red;
+}
+
+div {
+    outline: solid 1px black;
+}
+
+body {
+    outline: solid 1px black;
 }
