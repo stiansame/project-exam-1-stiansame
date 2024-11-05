@@ -22,9 +22,11 @@ async function getBloglist() {
       blogListcontainer.innerHTML += `<div class="shortBlog">
                 <img class="blogList_img" src="${blog._embedded["wp:featuredmedia"][0].source_url}">
                 <div class="blogCat">${catString}</div>
-                <h2>${blog.title.rendered}</h2>
-                <p>${blog.excerpt.rendered}</p>
-                <div class="blogAuthor">${blog._embedded.author[0].name}</div>
+                <div class="blogListHeader"><h2>${blog.title.rendered}</h2></div>
+                <Div class="blogListExcerpt"><p>${blog.excerpt.rendered}</p></div>
+                <div class="blogAuthor"><img class="bloglistAvatar" src="${blog._embedded.author[0].avatar_urls[24]}"> ${blog._embedded.author[0].name}</div>
+                <div> ${blog.date}</div>
+                <div>
                 </div>`;
     });
   } catch (error) {

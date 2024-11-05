@@ -107,6 +107,32 @@ nav li,
     padding-left: 0;
 }
 
+.bloglist {
+    border: 1px solid green;
+    display: grid;
+    gap: 1rem;
+}
+
+.shortBlog {
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-columns: 4;
+    grid-template-rows: 4;
+    border: 1px solid black;
+}
+
+
+.blogCat {
+    grid-area: 1/2/2/3;
+}
+
+.blogList_img {
+    grid-area: 1/1/5/2;
+    Height: 16rem;
+    width: 12rem;
+    object-fit: cover;
+}
 
 /*----------------------------------RESPONSIVE------------------------*/
 @media screen and (min-width: 870px) {
