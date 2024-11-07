@@ -26,9 +26,11 @@ async function getBloglist() {
       const formatDate = dateTimeFormatter.format(date);
 
       blogListcontainer.innerHTML += `<div class="shortBlog">
-                <img class="blogList_img" src="${blog._embedded["wp:featuredmedia"][0].source_url}">
+                <a class="blogList_img" href="../post/index.html?id=${blog.id}">
+                <img class="blogList_img" src="${blog._embedded["wp:featuredmedia"][0].source_url}" alt=${blog.title.rendered}></a>
                 <div class="blogCat">${catString}</div>
-                <div class="blogListHeader"><h2>${blog.title.rendered}</h2></div>
+                <a class="blogListHeader" href="../post/index.html?id=${blog.id}">
+                <div class="blogListHeader"><h2>${blog.title.rendered}</h2></div></a>
                 <div class="blogListExcerpt"><p>${blog.excerpt.rendered}</p></div>
                 <div class="blogAuthor"><img class="bloglistAvatar" src="${blog._embedded.author[0].avatar_urls[24]}"> ${blog._embedded.author[0].name}
                 <div> ${formatDate}</div>
