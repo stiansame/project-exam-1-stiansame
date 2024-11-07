@@ -11,9 +11,10 @@
 :root {
     --menu-bg: #e9b9b9;
     --secondaryColor: #e2520f;
-    --bg-color: #fff;
+    --bg-color: #fffff4;
     --margin-line-color: #ec7063;
     --ruling-line-color: #85c1e93a;
+    --main-bg: #fff;
 }
 
 html {
@@ -29,7 +30,6 @@ html {
     font-family: 'courier prime';
 
 }
-
 
 
 body {
@@ -124,7 +124,7 @@ nav li,
     gap: 1rem;
     grid-template-columns: 3;
     grid-template-rows: 4;
-    border: 1px solid rgb(255, 254, 243);
+    border: 1px solid rgb(247, 244, 217);
     background-color: var(--bg-color);
     background-image: linear-gradient(90deg, transparent 190px, var(--margin-line-color) 190px, var(--margin-line-color) 192px, transparent 192px), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
     background-size: 100% 1.2em;
@@ -150,6 +150,7 @@ nav li,
     -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
     transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
+
 
 
 .blogListHeader {
