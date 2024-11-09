@@ -9,6 +9,9 @@ export const blogListUrl =
 export const blogUrlBase =
   "https://stianrostad.no/wordpress/wp-json/wp/v2/posts/";
 
+export const commentsUrlBase =
+  "https://stianrostad.no/wordpress/wp-json/wp/v2/comments";
+
 //Define DIVS to display API-call results
 export const blogListcontainer = document.querySelector(".bloglist");
 export const blogContainer = document.querySelector(".blogContainer");

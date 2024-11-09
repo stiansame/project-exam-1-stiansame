@@ -4,6 +4,7 @@
 import { createMessage } from "./message.js";
 import { blogUrlBase } from "./script.js";
 import { blogContainer } from "./script.js";
+import { commentsUrlBase } from "./script.js";
 
 const message = createMessage();
 
@@ -14,6 +15,8 @@ const params = new URLSearchParams(queryString);
 const blogId = params.get("id");
 
 const embed = "?_embed";
+
+const queryTag = "?id=";
 
 const blogUrl = blogUrlBase + blogId + embed;
 
@@ -43,14 +46,38 @@ function renderPost(postDetails) {
     dateStyle: "long",
   });
   const formatDate = dateTimeFormatter.format(date);
-
-  blogContainer.innerHTML = `<div class="blog">
+  comments(postDetails);
+  const newComments = comments(postDetails);
+  console.log(newComments);
+  blogContainer.innerHTML += `<div class="blog">
                                 <h1>${postDetails.title.rendered}</h1>
                                 <div class="Cat">${catList}</div>
                                 <div class="postContent">${postDetails.content.rendered}</div>
                                 <div> ${formatDate}</div>
-                                                <div class="blogAuthor"><img class="bloglistAvatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> ${postDetails._embedded.author[0].name}
-                <div> ${formatDate}</div>
-                </div>
+                                <div class="blogAuthor"><img class="Avatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> ${postDetails._embedded.author[0].name}
+                               <div> ${formatDate}</div>
+                                </div>
                                 </div>`;
+
+  newComments.forEach((comment) => {
+    blogContainer.innerHTML += `<div>
+                                <p>${comment.author_name} replied:</p>
+                                <p>${comment.content.rendered}</p>     
+                                </div>`;
+  });
+}
+
+function comments(postDetails) {
+  let commentArray;
+
+  if (
+    postDetails._embedded.replies &&
+    postDetails._embedded.replies[0].length > 0
+  ) {
+    commentArray = postDetails._embedded.replies[0];
+  } else {
+    commentArray = [];
+  }
+
+  return commentArray;
 }
