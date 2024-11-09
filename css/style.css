@@ -113,27 +113,32 @@ nav li,
 
 .blogContainer,
 .bloglist {
-    border: 1px solid green;
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(10px, 750px);
     justify-content: center;
 }
 
+
+.comment,
 .blog {
     /*     display: grid;
         gap: 1rem;
     grid-template-columns: 3;
     grid-template-rows: 4; */
-    all: unset;
     padding: 1rem 1rem 1rem 6rem;
     border: 1px solid rgb(247, 244, 217);
     background-color: var(--bg-color);
-    background-image: linear-gradient(90deg, transparent 80px, var(--margin-line-color) 80px, var(--margin-line-color) 82px, transparent 82px), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
+    background-image: linear-gradient(90deg, transparent 5rem, var(--margin-line-color) 5rem, var(--margin-line-color) 5.1rem, transparent 5.1rem), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
     background-size: 100% 1.2em;
     line-height: 1.2;
     border-bottom-right-radius: 60px 10px;
     position: relative;
+}
+
+.comment {
+    margin-left: 5rem;
+    padding-top: 2.5rem;
 }
 
 .blog p {
@@ -177,6 +182,7 @@ nav li,
 
 }
 
+.comment::after,
 .blog:after,
 .shortBlog:after {
     content: "";
@@ -286,4 +292,10 @@ nav li,
     nav .nav-item:hover {
         border-radius: 1rem;
     }
+
+    .replies {
+        all: unset;
+        margin-left: 1rem;
+    }
+
 }
