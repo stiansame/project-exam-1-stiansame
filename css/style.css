@@ -9,13 +9,13 @@
 }
 
 :root {
-    --menu-bg: #e9b9b9;
+    --menu-bg: #ffffff;
     --secondaryColor: #e2520f;
     --bg-color: #fffff4;
     --margin-line-color: #ec7063;
     --ruling-line-color: #85c1e93a;
     --main-bg: #fff;
-    --comment-bg: #fff4fd;
+    --comment-bg: #ffff88;
 }
 
 html {
@@ -23,7 +23,7 @@ html {
     max-width: 1200px;
     font-size: 14px;
     background-color: var(--menu-bg);
-    background: linear-gradient(#ececf5 0%, #f89afc 75%);
+    background: linear-gradient(#ffffff 0%, #f8d4f2 75%);
     background-size: cover;
     color: rgb(66, 66, 66);
     min-height: 100dvh;
@@ -99,7 +99,7 @@ header {
     position: relative;
     top: 0;
     z-index: 100;
-    border: 1px solid black
+
 }
 
 nav ul,
@@ -165,6 +165,7 @@ nav li,
     padding-left: 1rem;
 }
 
+.replies .comment::after,
 .replies .comment {
     all: unset;
 }
@@ -200,7 +201,6 @@ nav li,
     gap: 1rem;
     grid-template-columns: 3;
     grid-template-rows: 4;
-    border-left: .1rem solid var(--margin-line-color);
     background-color: var(--bg-color);
     background-image: linear-gradient(90deg, transparent 190px, var(--margin-line-color) 190px, var(--margin-line-color) 192px, transparent 192px), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
     background-size: 100% 1.2em;

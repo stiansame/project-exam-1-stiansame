@@ -44,7 +44,7 @@ async function fetchAndRenderPostWithComments() {
       <h1>${postDetails.title.rendered}</h1>
       <div class="cat">${catList}</div>
       <div class="postContent">${postDetails.content.rendered}</div>
-      <div class="blogAuthor"><img class="avatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> ${postDetails._embedded.author[0].name}
+      <div class="blogAuthor"><img class="avatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> <b>${postDetails._embedded.author[0].name}</b> | 
       <div> ${formatDate}</div>
       </div>
       </div>
@@ -76,7 +76,7 @@ async function fetchAndRenderPostWithComments() {
       commentElement.innerHTML = `
       <div class="blogAuthor">
       <img class="avatar" src="${comment.author_avatar_urls[24]}">
-        <p><strong>${comment.author_name}</strong> - ${newCommentDate}</p></div>
+        <p><strong>${comment.author_name}</strong> | ${newCommentDate}</p></div>
         <p>${comment.content.rendered}</p>
       `;
 
