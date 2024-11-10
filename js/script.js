@@ -14,7 +14,6 @@ export const commentsUrlBase =
 
 //Define DIVS to display API-call results
 export const blogListcontainer = document.querySelector(".bloglist");
-export const blogContainer = document.querySelector(".blogContainer");
 
 //Display message
 export const message = createMessage();

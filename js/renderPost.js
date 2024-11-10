@@ -3,8 +3,8 @@
 //imports
 import { createMessage } from "./message.js";
 import { blogUrlBase } from "./script.js";
-import { blogContainer } from "./script.js";
 import { collectImagesToContainer } from "./gatherImages.js";
+import { placeImageContainerRandomly } from "./gatherImages.js";
 
 const message = createMessage();
 
@@ -51,7 +51,8 @@ async function fetchAndRenderPostWithComments() {
       </div>
     `;
 
-    await collectImagesToContainer();
+    collectImagesToContainer();
+    placeImageContainerRandomly();
 
     // Check if there are embedded comments
     const comments = postDetails._embedded?.replies
