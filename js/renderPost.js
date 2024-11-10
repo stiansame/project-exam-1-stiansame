@@ -4,6 +4,7 @@
 import { createMessage } from "./message.js";
 import { blogUrlBase } from "./script.js";
 import { blogContainer } from "./script.js";
+import { collectImagesToContainer } from "./gatherImages.js";
 
 const message = createMessage();
 
@@ -49,6 +50,8 @@ async function fetchAndRenderPostWithComments() {
       </div>
       </div>
     `;
+
+    await collectImagesToContainer();
 
     // Check if there are embedded comments
     const comments = postDetails._embedded?.replies

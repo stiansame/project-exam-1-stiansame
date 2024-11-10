@@ -150,8 +150,25 @@ nav li,
     position: relative;
 }
 
+.imageContainer {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
 
+.wp-block-image {
+    flex: 1 1 15rem;
+    /* flex-grow, flex-shrink, and flex-basis */
+    min-width: 15rem;
+    /* Minimum width of 15rem */
+    max-width: 1fr;
+    /* Maximum width will stretch to fill space */
+}
 
+/* .imageContainer>*:last-child {
+    grid-column: 1/-1;
+}
+ */
 #commentsContainer {
     display: grid;
     gap: 1rem;
