@@ -17,7 +17,7 @@ const embed = "?_embed";
 
 const postUrl = blogUrlBase + postId + embed;
 
-async function fetchAndRenderPostWithComments(postId) {
+async function fetchAndRenderPostWithComments() {
   try {
     // Fetch post details with embedded comments and replies
     const response = await fetch(postUrl);
@@ -44,7 +44,7 @@ async function fetchAndRenderPostWithComments(postId) {
       <h1>${postDetails.title.rendered}</h1>
       <div class="cat">${catList}</div>
       <div class="postContent">${postDetails.content.rendered}</div>
-      <div class="blogAuthor"><img class="Avatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> ${postDetails._embedded.author[0].name}
+      <div class="blogAuthor"><img class="avatar" src="${postDetails._embedded.author[0].avatar_urls[24]}"> ${postDetails._embedded.author[0].name}
       <div> ${formatDate}</div>
       </div>
       </div>
@@ -54,7 +54,7 @@ async function fetchAndRenderPostWithComments(postId) {
     const comments = postDetails._embedded?.replies
       ? postDetails._embedded.replies[0]
       : [];
-
+    console.log(comments);
     // Sort comments by date (oldest to newest)
     comments.sort((a, b) => new Date(a.date) - new Date(b.date));
 
@@ -67,10 +67,16 @@ async function fetchAndRenderPostWithComments(postId) {
       const commentElement = document.createElement("div");
       commentElement.classList.add("comment");
 
+      const commentDate = new Date(comment.date);
+      const commentDateFormatter = new Intl.DateTimeFormat("NO", {
+        dateStyle: "long",
+      });
+      const newCommentDate = commentDateFormatter.format(commentDate);
+
       commentElement.innerHTML = `
-        <p><strong>${comment.author_name}</strong> - ${new Date(
-        comment.date
-      ).toLocaleString()}</p>
+      <div class="blogAuthor">
+      <img class="avatar" src="${comment.author_avatar_urls[24]}">
+        <p><strong>${comment.author_name}</strong> - ${newCommentDate}</p></div>
         <p>${comment.content.rendered}</p>
       `;
 

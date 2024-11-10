@@ -15,6 +15,7 @@
     --margin-line-color: #ec7063;
     --ruling-line-color: #85c1e93a;
     --main-bg: #fff;
+    --comment-bg: #fff4fd;
 }
 
 html {
@@ -119,8 +120,6 @@ nav li,
     justify-content: center;
 }
 
-
-.comment,
 .blog {
     /*     display: grid;
         gap: 1rem;
@@ -137,8 +136,37 @@ nav li,
 }
 
 .comment {
-    margin-left: 5rem;
-    padding-top: 2.5rem;
+    /*     display: grid;
+        gap: 1rem;
+    grid-template-columns: 3;
+    grid-template-rows: 4; */
+    padding: 2rem 1rem 2rem 2rem;
+    background-color: var(--comment-bg);
+    margin-right: 15rem;
+    /*     background-image: linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    line-height: 1.2; */
+    border-bottom-right-radius: 60px 10px;
+    position: relative;
+}
+
+
+
+#commentsContainer {
+    display: grid;
+    gap: 1rem;
+}
+
+
+.replies {
+    border-left: .1rem solid var(--margin-line-color);
+    margin-left: 2rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.replies .comment {
+    all: unset;
 }
 
 .blog p {
@@ -172,7 +200,7 @@ nav li,
     gap: 1rem;
     grid-template-columns: 3;
     grid-template-rows: 4;
-    border: 1px solid rgb(247, 244, 217);
+    border-left: .1rem solid var(--margin-line-color);
     background-color: var(--bg-color);
     background-image: linear-gradient(90deg, transparent 190px, var(--margin-line-color) 190px, var(--margin-line-color) 192px, transparent 192px), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
     background-size: 100% 1.2em;
@@ -236,6 +264,7 @@ nav li,
     align-items: center;
 }
 
+.avatar,
 .bloglistAvatar {
     border-radius: 50%;
     max-height: 24px;
@@ -293,9 +322,6 @@ nav li,
         border-radius: 1rem;
     }
 
-    .replies {
-        all: unset;
-        margin-left: 1rem;
-    }
+
 
 }
