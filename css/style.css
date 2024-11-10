@@ -136,16 +136,9 @@ nav li,
 }
 
 .comment {
-    /*     display: grid;
-        gap: 1rem;
-    grid-template-columns: 3;
-    grid-template-rows: 4; */
     padding: 2rem 1rem 2rem 2rem;
     background-color: var(--comment-bg);
     margin-right: 15rem;
-    /*     background-image: linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
-    background-size: 100% 1.2em;
-    line-height: 1.2; */
     border-bottom-right-radius: 60px 10px;
     position: relative;
 }
@@ -158,17 +151,10 @@ nav li,
 
 .wp-block-image {
     flex: 1 1 15rem;
-    /* flex-grow, flex-shrink, and flex-basis */
     min-width: 15rem;
-    /* Minimum width of 15rem */
     max-width: 1fr;
-    /* Maximum width will stretch to fill space */
 }
 
-/* .imageContainer>*:last-child {
-    grid-column: 1/-1;
-}
- */
 #commentsContainer {
     display: grid;
     gap: 1rem;
@@ -208,8 +194,8 @@ nav li,
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    /* transform: rotate(-2deg); */
-    border-bottom-right-radius: 60px 5px;
+
+
 }
 
 .shortBlog {
@@ -227,6 +213,7 @@ nav li,
 
 }
 
+.postContent img:after,
 .comment::after,
 .blog:after,
 .shortBlog:after {
@@ -270,8 +257,6 @@ nav li,
     min-height: 100%;
     width: 12rem;
     object-fit: cover;
-    /* transform: rotate(-2deg); */
-    border-bottom-right-radius: 60px 5px;
 }
 
 .blogAuthor,
