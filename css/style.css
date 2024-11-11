@@ -112,6 +112,7 @@ nav li,
     padding-left: 0;
 }
 
+.contactContainer,
 .blogContainer,
 .bloglist {
     display: grid;
@@ -120,6 +121,7 @@ nav li,
     justify-content: center;
 }
 
+#contactForm,
 .blog {
     /*     display: grid;
         gap: 1rem;
@@ -167,6 +169,7 @@ nav li,
     margin-left: 2rem;
     margin-top: 1rem;
     padding-left: 1rem;
+
 }
 
 .replies .comment::after,
@@ -212,7 +215,8 @@ nav li,
 
 }
 
-.postContent img:after,
+
+#contactForm:after,
 .comment::after,
 .blog:after,
 .shortBlog:after {

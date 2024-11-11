@@ -62,27 +62,29 @@
         </nav>
     </header>
     <main>
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <span class="error" id="nameError"></span><br>
+        <div class="contactContainer">
+            <h1>Contact me</h1>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error" id="nameError"></span><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <span class="error" id="emailError"></span><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span><br>
 
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-            <span class="error" id="subjectError"></span><br>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                <span class="error" id="subjectError"></span><br>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <span class="error" id="messageError"></span><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error" id="messageError"></span><br>
 
-            <button type="submit">Send</button>
-            <div id="formMessage"></div>
-        </form>
+                <button type="submit">Send</button>
+                <div id="formMessage"></div>
+            </form>
+        </div>
     </main>
     <footer>
         footer here!
