@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2072bb14b3.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Pattaya&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Beer, Bikes and Boobs</title>
+    <meta name="description" content="Like the title says - just a blog about bikes and beers, and the occasional boob!">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script async src="../js/script.js" type="module"></script>
+    <script async src="../js/contact.js" type="module"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/bb_baddie_logo.png" alt="Logo for Beer, bikes and boobs">
+        </div>
+        <div class="title">Beers, Bikes & Boobs</div>
+        <nav>
+            <ul>
+                <li>
+                    <div class="nav_item">
+                        <a href="../index.html">
+                            home
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="nav_item active">
+                        <a href="../blog/index.html">
+                            <h1>blog</h1>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="nav_item">
+                        <a href="../about/index.html">
+                            about me
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="nav_item">
+                        <a href="../contact/index.html">
+                            contact me
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error" id="nameError"></span><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span><br>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <span class="error" id="subjectError"></span><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <span class="error" id="messageError"></span><br>
+
+            <button type="submit">Send</button>
+            <div id="formMessage"></div>
+        </form>
+    </main>
+    <footer>
+        footer here!
+    </footer>
+
+</body>
+
+</html>
