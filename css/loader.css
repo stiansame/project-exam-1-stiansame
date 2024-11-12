@@ -1,0 +1,28 @@
+.spinner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid #ff0077;
+    /* Starting color */
+    border-right: 8px solid #8e44ad;
+    /* Ending color */
+    animation: spin 1.2s linear infinite;
+    background-image: linear-gradient(135deg, #ff0077, #8e44ad);
+    background-clip: padding-box;
+    box-sizing: border-box;
+    position: relative;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 0) 56%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
