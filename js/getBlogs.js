@@ -27,7 +27,7 @@ async function getBloglist() {
 
       blogListcontainer.innerHTML += `<div class="shortBlog">
                 <a class="blogList_img" href="../post/index.html?id=${blog.id}">
-                <img class="blogList_img" src="${blog._embedded["wp:featuredmedia"][0].source_url}" alt=${blog.title.rendered}></a>
+                <img class="blogList_img" src="${blog._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt=${blog.title.rendered}></a>
                 <div class="blogCat">${catString}</div>
                 <a class="blogListHeader" href="../post/index.html?id=${blog.id}">
                 <div class="blogListHeader"><h2>${blog.title.rendered}</h2></div></a>
