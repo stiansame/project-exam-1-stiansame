@@ -43,6 +43,7 @@ body {
     max-width: 1200px;
     min-height: 100dvh;
     padding: 0 1rem;
+    overflow-x: hidden;
 }
 
 nav {
@@ -166,17 +167,6 @@ nav .nav-item:hover {
     border: 1px solid rgb(105, 4, 88);
 }
 
-footer {
-    /*     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto, 1fr; */
-    position: sticky;
-    top: 100%;
-    margin-top: 2rem;
-    border: solid 1px green;
-    padding: 1rem;
-
-}
 
 header {
     display: grid;
@@ -364,11 +354,14 @@ nav li,
 
 footer {
     display: grid;
+    background: #d434ba;
     grid-template-columns: 1fr;
     grid-template-rows: auto, 1fr;
     position: sticky;
     top: 100%;
     margin-top: 2rem;
+    width: 100%;
+
 }
 
 
