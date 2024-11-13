@@ -30,19 +30,18 @@ html {
     background-color: var(--menu-bg);
     background: linear-gradient(#ffffff 0%, #f8d4f2 75%);
     background-size: cover;
-    color: rgb(66, 66, 66);
     min-height: 100dvh;
+    scroll-behavior: smooth;
     font-family: 'courier prime';
 
 }
 
 
 body {
-    padding: 2rem 1rem;
-    /*     background: #fff;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-    z-index: -3; */
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 100dvh;
+    padding: 0 1rem;
 }
 
 nav {
@@ -58,6 +57,88 @@ nav {
     transform-origin: top;
     transition: all 0.4s ease-in-out;
     font-family: 'Roboto Condensed';
+}
+
+.nav_item {
+    padding: 0.5rem;
+}
+
+nav ul,
+nav li,
+.footer_nav ul,
+.footer_nav li {
+    list-style: none;
+    margin: 0;
+    display: block;
+    padding-left: 0;
+}
+
+nav ul {
+    grid-area: 1/1/2/2;
+    z-index: 2;
+}
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px;
+    left: -9999px;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out 0.25s;
+}
+
+.nav-toggle:checked~.nav-toggle-label i:last-child {
+    display: block;
+}
+
+.nav-toggle:checked~.nav-toggle-label i:first-child {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: rgb(231, 29, 171);
+}
+
+.nav-toggle-label:hover {
+    filter: drop-shadow(0 0.5rem 0.5rem rgba(12, 100, 112, 0.726));
+    cursor: pointer;
+}
+
+.nav-toggle-label i:last-child {
+    display: none;
+}
+
+nav a {
+    color: rgb(105, 4, 88);
+    text-decoration: none;
+    display: block;
+    font-size: clamp(1.8rem, 3vw, 2rem);
+}
+
+.active,
+nav a:hover {
+    font-weight: bold;
+    color: rgb(105, 4, 88);
+    transition: all 0.15s ease;
+}
+
+.active,
+nav .nav-item:hover {
+    background-color: rgb(255, 224, 243);
+    transition: all 0.4s ease;
 }
 
 .title {
@@ -279,6 +360,16 @@ nav li,
     border-radius: 50%;
     max-height: 24px;
 }
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto, 1fr;
+    position: sticky;
+    top: 100%;
+    margin-top: 2rem;
+}
+
 
 /*----------------------------------RESPONSIVE------------------------*/
 @media screen and (min-width: 870px) {

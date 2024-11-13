@@ -24,42 +24,49 @@
 
 <body>
     <header>
-        <div class="logo">
-            <img src="../images/bb_baddie_logo.png" alt="Logo for Beer, bikes and boobs">
-        </div>
-        <div class="title">Beers, Bikes & Boobs</div>
+        <a href="../">
+            <div class="logo">
+                <img src="../images/bb_baddie_logo.png" alt="Logo for Beer, bikes and boobs">
+            </div>
+        </a>
+        <div class="title">Beers, Bikes &#38 Boobs</div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <nav>
             <ul>
                 <li>
                     <div class="nav_item">
-                        <a href="../index.html">
+                        <a href="../">
                             home
                         </a>
                     </div>
                 </li>
                 <li>
-                    <div class="nav_item active">
-                        <a href="../blog/index.html">
-                            <h1>blog</h1>
+                    <div class="nav_item">
+                        <a href="../blog/">
+                            blog
                         </a>
                     </div>
                 </li>
                 <li>
                     <div class="nav_item">
-                        <a href="../about/index.html">
+                        <a href="../about/">
                             about me
                         </a>
                     </div>
                 </li>
                 <li>
-                    <div class="nav_item">
-                        <a href="../contact/index.html">
-                            contact me
+                    <div class="nav_item active">
+                        <a href="../contact/">
+                            <h1>contact me</h1>
                         </a>
                     </div>
                 </li>
             </ul>
         </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <i class="fas fa-bars"></i>
+            <i class="fa-solid fa-x"></i>
+        </label>
     </header>
     <main>
         <div class="contactContainer">

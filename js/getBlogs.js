@@ -32,7 +32,7 @@ async function getBloglist() {
                 <a class="blogListHeader" href="../post/index.html?id=${blog.id}">
                 <div class="blogListHeader"><h2>${blog.title.rendered}</h2></div></a>
                 <div class="blogListExcerpt"><p>${blog.excerpt.rendered}</p></div>
-                <div class="blogAuthor"><img class="bloglistAvatar" src="${blog._embedded.author[0].avatar_urls[24]}"> ${blog._embedded.author[0].name}
+                <div class="blogAuthor"><img class="bloglistAvatar" src="${blog._embedded.author[0].avatar_urls[24]}"> <b>${blog._embedded.author[0].name}</b>
                 <div> ${formatDate}</div>
                 </div>
                 </div>`;
