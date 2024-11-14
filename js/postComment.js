@@ -2,150 +2,97 @@
 
 import { postId } from "./renderPost.js";
 
-const wordpressSiteURL = "https://stianrostad.no/wordpress";
-const postID = postId; // Replace with the actual post ID
-const url = `${wordpressSiteURL}/wp-json/wp/v2/comments`;
+document.addEventListener("DOMContentLoaded", function () {
+  const replyModal = document.getElementById("replyModal");
+  const closeModal = document.getElementById("closeModal");
+  let parentCommentID = null;
 
-// Authorization setup
-const username = "bikes_n_beer_baddie"; // Replace with your WordPress username
-const appPassword = "DdSN LfDT FPLl N1gS ZLb6 5NCU"; // Replace with the generated application password
-const authString = `${username}:${appPassword}`;
-const encodedAuth = btoa(authString); // Encode to Base64
-
-// Initial fetch to load comments
-async function loadComments() {
-  const response = await fetch(`${url}?post=${postID}`);
-  if (response.ok) {
-    const comments = await response.json();
-    displayComments(comments);
+  // Function to open the modal with the comment ID to reply to
+  function openReplyModal(commentID) {
+    parentCommentID = commentID; // Set parent comment ID for the reply
+    replyModal.style.display = "flex"; // Show the modal
   }
-}
 
-function displayComments(comments) {
-  const commentsContainer = document.getElementById("commentsContainer");
-  commentsContainer.innerHTML = ""; // Clear previous comments
-  comments.forEach((comment) => {
-    const commentElement = document.createElement("div");
-    commentElement.innerHTML = `
-      <p><strong>${comment.author_name}</strong> says:</p>
-      <p>${comment.content.rendered}</p>
-      <button onclick="openReplyModal(${comment.id})">Reply</button>
-    `;
-    commentsContainer.appendChild(commentElement);
+  // Event listener for closing the modal
+  closeModal.addEventListener("click", () => {
+    replyModal.style.display = "none";
   });
-}
 
-// Handle main comment submission
-document
-  .getElementById("commentForm")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
+  // Add event listeners to each reply button
+  document.querySelectorAll(".replyButton").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const commentID = e.target
+        .closest(".comment")
+        .getAttribute("data-comment-id");
+      openReplyModal(commentID);
+    });
+  });
 
-    const author_name = document.querySelector(
-      'input[name="author_name"]'
-    ).value;
-    const author_email = document.querySelector(
-      'input[name="author_email"]'
-    ).value;
-    const content = document.querySelector('textarea[name="content"]').value;
+  // Form submission for replies
+  document
+    .getElementById("replyForm")
+    .addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-    const commentData = {
-      post: postID,
-      author_name: author_name,
-      author_email: author_email,
-      content: content,
-    };
+      // Form data
+      const author_name = document.querySelector(
+        '#replyForm input[name="author_name"]'
+      ).value;
+      const author_email = document.querySelector(
+        '#replyForm input[name="author_email"]'
+      ).value;
+      const content = document.querySelector(
+        '#replyForm textarea[name="content"]'
+      ).value;
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${encodedAuth}`,
-        },
-        body: JSON.stringify(commentData),
-      });
+      // Replace with your WordPress site URL and the post ID you want to comment on
+      const postID = postId; // Replace with actual post ID
+      const wordpressSiteURL = "https://stianrostad.no/wordpress";
 
-      if (response.ok) {
-        document.getElementById("responseMessage").innerText =
-          "Comment submitted successfully!";
-        document.getElementById("commentForm").reset();
-        loadComments(); // Refresh comments after submission
-      } else {
-        const errorData = await response.json();
+      // WordPress REST API endpoint for posting comments
+      const url = `${wordpressSiteURL}/wp-json/wp/v2/comments`;
+
+      // Application password authentication
+      const username = "bikes_n_beer_baddie"; // Replace with your WordPress username
+      const appPassword = "DdSN LfDT FPLl N1gS ZLb6 5NCU"; // Replace with the generated application password
+      const authString = `${username}:${appPassword}`;
+      const encodedAuth = btoa(authString); // Encode to Base64
+
+      // Comment data object for reply, including parent comment ID
+      const commentData = {
+        post: postID, // ID of the post to comment on
+        parent: parentCommentID, // Set parent comment ID to make it a reply
+        author_name: author_name,
+        author_email: author_email,
+        content: content,
+      };
+
+      // Send the data using fetch
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Basic ${encodedAuth}`, // Add Basic Auth header
+          },
+          body: JSON.stringify(commentData),
+        });
+
+        if (response.ok) {
+          document.getElementById("responseMessage").innerText =
+            "Reply submitted successfully!";
+          replyModal.style.display = "none"; // Hide the modal after submitting
+          document.getElementById("replyForm").reset(); // Clear the form
+        } else {
+          const errorData = await response.json();
+          document.getElementById(
+            "responseMessage"
+          ).innerText = `Error: ${errorData.message}`;
+        }
+      } catch (error) {
         document.getElementById(
           "responseMessage"
-        ).innerText = `Error: ${errorData.message}`;
+        ).innerText = `Error: ${error.message}`;
       }
-    } catch (error) {
-      document.getElementById(
-        "responseMessage"
-      ).innerText = `Error: ${error.message}`;
-    }
-  });
-
-// Reply functionality
-function openReplyModal(parentCommentID) {
-  document.getElementById("replyModal").style.display = "block";
-  document.getElementById("modalOverlay").style.display = "block";
-  document.getElementById("replyForm").onsubmit = (e) =>
-    submitReply(e, parentCommentID);
-}
-
-function closeReplyModal() {
-  document.getElementById("replyModal").style.display = "none";
-  document.getElementById("modalOverlay").style.display = "none";
-}
-
-async function submitReply(e, parentCommentID) {
-  e.preventDefault();
-
-  const author_name = document.querySelector(
-    '#replyForm input[name="author_name"]'
-  ).value;
-  const author_email = document.querySelector(
-    '#replyForm input[name="author_email"]'
-  ).value;
-  const content = document.querySelector(
-    '#replyForm textarea[name="content"]'
-  ).value;
-
-  const replyData = {
-    post: postID,
-    parent: parentCommentID, // Set the parent comment ID to make this a reply
-    author_name: author_name,
-    author_email: author_email,
-    content: content,
-  };
-
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${encodedAuth}`,
-      },
-      body: JSON.stringify(replyData),
     });
-
-    if (response.ok) {
-      document.getElementById("responseMessage").innerText =
-        "Reply submitted successfully!";
-      document.getElementById("replyForm").reset();
-      closeReplyModal();
-      loadComments(); // Refresh comments after reply submission
-    } else {
-      const errorData = await response.json();
-      document.getElementById(
-        "responseMessage"
-      ).innerText = `Error: ${errorData.message}`;
-    }
-  } catch (error) {
-    document.getElementById(
-      "responseMessage"
-    ).innerText = `Error: ${error.message}`;
-  }
-}
-
-// Load comments on page load
-loadComments();
+});

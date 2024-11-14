@@ -19,7 +19,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <script async src="../js/script.js" type="module"></script>
     <script async src="../js/renderPost.js" type="module"></script>
-    <script async src="../js/postComment.js" type="module"></script>
+
 
 </head>
 
@@ -85,16 +85,18 @@
             </form>
             <div id="responseMessage"></div>
         </div>
-        <!-- Reply Modal -->
-        <div id="modalOverlay"></div>
-        <div id="replyModal">
-            <form id="replyForm">
-                <input type="text" name="author_name" placeholder="Your Name" required />
-                <input type="email" name="author_email" placeholder="Your Email" required />
-                <textarea name="content" placeholder="Your Reply" required></textarea>
-                <button type="submit">Post Reply</button>
-                <button type="button" onclick="closeReplyModal()">Cancel</button>
-            </form>
+        <!-- Modal for Reply Form -->
+        <div id="replyModal" style="display:none;">
+            <div class="modal-content">
+                <span id="closeModal" style="cursor: pointer;">&times;</span>
+                <h2>Reply to Comment</h2>
+                <form id="replyForm">
+                    <input type="text" name="author_name" placeholder="Your Name" required />
+                    <input type="email" name="author_email" placeholder="Your Email" required />
+                    <textarea name="content" placeholder="Your Reply" required></textarea>
+                    <button type="submit">Post Reply</button>
+                </form>
+            </div>
         </div>
 
 
