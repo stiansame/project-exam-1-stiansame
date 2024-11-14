@@ -78,13 +78,26 @@
         </div>
         <div class="postCommentContainer">
             <form id="commentForm">
-                <p><input type="text" name="author_name" placeholder="Your Name" required /></p>
-                <p><input type="email" name="author_email" placeholder="Your Email" required /></p>
-                <p></p><textarea name="content" placeholder="Your Comment" required></textarea></p>
-                <p><button type="submit">Post Comment</button></p>
+                <input type="text" name="author_name" placeholder="Your Name" required />
+                <input type="email" name="author_email" placeholder="Your Email" required />
+                <textarea name="content" placeholder="Your Comment" required></textarea>
+                <button type="submit">Post Comment</button>
             </form>
             <div id="responseMessage"></div>
         </div>
+        <!-- Reply Modal -->
+        <div id="modalOverlay"></div>
+        <div id="replyModal">
+            <form id="replyForm">
+                <input type="text" name="author_name" placeholder="Your Name" required />
+                <input type="email" name="author_email" placeholder="Your Email" required />
+                <textarea name="content" placeholder="Your Reply" required></textarea>
+                <button type="submit">Post Reply</button>
+                <button type="button" onclick="closeReplyModal()">Cancel</button>
+            </form>
+        </div>
+
+
     </main>
     <footer>
         <div class="footerContainer">
@@ -93,6 +106,7 @@
                 <p>All images generated with the help of A.I or found on <a href="https://www.unsplash.com" target="_blank">www.unsplash.com</a></p>
                 <p>All fonts by <a href="https://fonts.google.com/" target="_blank">Google Fonts</a></p>
             </div>
+        </div>
     </footer>
 
 </body>
