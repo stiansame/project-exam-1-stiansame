@@ -22,11 +22,12 @@
     --ruling-line-color: #85c1e93a;
     --main-bg: #fff;
     --comment-bg: #ffff88;
+
 }
 
 html {
     margin: 0 auto;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     font-size: 14px;
     background-color: var(--menu-bg);
     background: linear-gradient(#ffffff 0%, #f8d4f2 75%);
@@ -40,10 +41,16 @@ html {
 
 body {
     margin: 0 auto;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     min-height: 100dvh;
     padding: 0 1rem;
     overflow-x: hidden;
+}
+
+main {
+    max-width: 1200px;
+    display: grid;
+    justify-self: center;
 }
 
 nav {
@@ -146,7 +153,7 @@ nav .nav-item:hover {
 .title {
     font-family: 'pattaya', sans-serif;
     font-size: clamp(2rem, 4.5vw, 5rem);
-    color: rgb(105, 4, 88);
+    color: #690558;
     align-self: center;
 }
 
@@ -179,15 +186,6 @@ header {
 
 }
 
-nav ul,
-nav li,
-.footer_nav ul,
-.footer_nav li {
-    list-style: none;
-    margin: 0;
-    display: block;
-    padding-left: 0;
-}
 
 .contactContainer,
 .blogContainer,
@@ -214,12 +212,18 @@ nav li,
     position: relative;
 }
 
+.postCommentContainer,
 .comment {
     padding: 2rem 1rem 2rem 2rem;
     background-color: var(--comment-bg);
     margin-right: 15rem;
     border-bottom-right-radius: 60px 10px;
     position: relative;
+}
+
+.postCommentContainer {
+    display: flex;
+    flex-direction: column;
 }
 
 .imageContainer {
@@ -354,13 +358,23 @@ nav li,
 
 footer {
     display: grid;
-    background: #d434ba;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto, 1fr;
+    background: #690558;
+    color: #fff;
     position: sticky;
     top: 100%;
-    margin-top: 2rem;
+    margin: 2rem -1rem 0;
+}
+
+.footerContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto, 1fr;
+    max-width: 1200px;
     width: 100%;
+    display: grid;
+    justify-self: center;
+    padding: 1rem;
+
+
 
 }
 

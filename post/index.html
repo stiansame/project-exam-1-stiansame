@@ -19,6 +19,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <script async src="../js/script.js" type="module"></script>
     <script async src="../js/renderPost.js" type="module"></script>
+    <script async src="../js/postComment.js" type="module"></script>
 
 </head>
 
@@ -75,9 +76,23 @@
             <div id="commentsContainer"></div>
 
         </div>
+        <div class="postCommentContainer">
+            <form id="commentForm">
+                <p><input type="text" name="author_name" placeholder="Your Name" required /></p>
+                <p><input type="email" name="author_email" placeholder="Your Email" required /></p>
+                <p></p><textarea name="content" placeholder="Your Comment" required></textarea></p>
+                <p><button type="submit">Post Comment</button></p>
+            </form>
+            <div id="responseMessage"></div>
+        </div>
     </main>
     <footer>
-        footer here!
+        <div class="footerContainer">
+            <div class="footerContent">
+                <p>2023 Stian Rostad &copy;</p>
+                <p>All images generated with the help of A.I or found on <a href="https://www.unsplash.com" target="_blank">www.unsplash.com</a></p>
+                <p>All fonts by <a href="https://fonts.google.com/" target="_blank">Google Fonts</a></p>
+            </div>
     </footer>
 
 </body>
