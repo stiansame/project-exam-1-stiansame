@@ -1,6 +1,7 @@
 /* --- IMPORTS --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Pattaya&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Just+Another+Hand&family=Pattaya&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 .roboto-condensed {
@@ -40,8 +41,29 @@
     font-style: normal;
 }
 
-.caveat-brush-regular {
-    font-family: "Caveat Brush", cursive;
+.just-another-hand-regular {
+    font-family: "Just Another Hand", cursive;
     font-weight: 400;
     font-style: normal;
+    font-optical-sizing: auto;
+
+}
+
+
+h2 strong {
+    position: relative;
+    font-weight: 300;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.125rem;
+        left: -0.5rem;
+        right: -0.5rem;
+        height: 0.75rem;
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 1rem;
+    }
 }

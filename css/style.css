@@ -199,6 +199,7 @@ header {
 }
 
 #contactForm,
+.allComments,
 .blog {
     /*     display: grid;
         gap: 1rem;
@@ -214,13 +215,36 @@ header {
     position: relative;
 }
 
-.postCommentContainer,
+.allComments {
+    margin-top: 1rem;
+
+    h2 {
+        font-family: "Just Another Hand";
+        color: #002b59;
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* .postCommentContainer,
 .comment {
     padding: 2rem 1rem 2rem 2rem;
     background-color: var(--comment-bg);
     margin-right: 15rem;
     border-bottom-right-radius: 60px 10px;
     position: relative;
+} */
+
+
+.comment {
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius: 15px 255px;
+
+    border: solid 2px #002b59;
+    padding: .5rem;
+    ;
 }
 
 .postCommentContainer {
@@ -252,6 +276,9 @@ header {
     margin-left: 2rem;
     margin-top: 1rem;
     padding-left: 1rem;
+    border-top-left-radius: 255px 0px;
+    border-bottom-left-radius: 15px 255px;
+
 
 }
 
