@@ -54,6 +54,7 @@ main {
     max-width: 1200px;
     display: grid;
     justify-self: center;
+    gap: 1rem;
 }
 
 nav {
@@ -69,6 +70,10 @@ nav {
     transform-origin: top;
     transition: all 0.4s ease-in-out;
     font-family: 'Roboto Condensed';
+}
+
+.postHeader {
+    padding-bottom: 1rem;
 }
 
 .nav_item {
@@ -199,6 +204,10 @@ header {
     justify-content: center;
 }
 
+.bloglist {
+    grid-area: 2/1/2/2;
+}
+
 #contactForm,
 .allComments,
 .blog {
@@ -227,15 +236,21 @@ header {
     }
 }
 
-/* .postCommentContainer,
-.comment {
+.latestPostContainer {
     padding: 2rem 1rem 2rem 2rem;
     background-color: var(--comment-bg);
-    margin-right: 15rem;
     border-bottom-right-radius: 60px 10px;
     position: relative;
-} */
 
+}
+
+#blogpage {
+    grid-template-columns: 2fr 1fr;
+}
+
+.sidebar {
+    grid-area: 2/2/3/3;
+}
 
 .comment {
     border-top-left-radius: 255px 15px;
@@ -326,7 +341,7 @@ header {
 
 }
 
-
+.latestPostContainer::after,
 #contactForm:after,
 .comment::after,
 .blog:after,
