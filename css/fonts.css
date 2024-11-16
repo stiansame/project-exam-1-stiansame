@@ -67,3 +67,22 @@ h2 strong {
         padding-bottom: 1rem;
     }
 }
+
+.slide {
+    font-family: "Roboto Condensed", sans-serif;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+}
+
+.contentContainer {
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 1.5;
+}

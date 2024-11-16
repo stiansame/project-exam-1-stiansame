@@ -24,6 +24,7 @@
     --ruling-line-color: #85c1e93a;
     --main-bg: #fff;
     --comment-bg: #ffff88;
+    --auto-grid-min-size: 16rem;
 
 }
 
@@ -179,12 +180,12 @@ nav .nav-item:hover {
 
 header {
     display: grid;
-    grid-template-columns: auto minmax(200px, 1fr);
     gap: 1rem;
-    width: 100%;
     position: relative;
     top: 0;
     z-index: 100;
+    margin: 0 -1rem 1rem;
+    border-bottom: #690558 2px solid;
 
 }
 
@@ -394,6 +395,7 @@ footer {
     margin: 2rem -1rem 0;
 }
 
+.headerContainer,
 .footerContainer {
     grid-template-columns: 1fr;
     grid-template-rows: auto, 1fr;
@@ -402,11 +404,40 @@ footer {
     display: grid;
     justify-self: center;
     padding: 1rem;
-
-
-
 }
 
+.headerContainer {
+    display: grid;
+    grid-template-columns: auto minmax(200px, 1fr);
+}
+
+.footerContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto, 1fr;
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    img {
+        margin: -1rem -1rem 0;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+    }
+}
 
 /*----------------------------------RESPONSIVE------------------------*/
 @media screen and (min-width: 870px) {
@@ -433,9 +464,10 @@ footer {
 
     }
 
-    header {
+    .headerContainer {
         display: grid;
         grid-template-columns: auto minmax(200px, 1fr) auto;
+
     }
 
     .logo {

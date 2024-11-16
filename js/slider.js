@@ -17,11 +17,20 @@ async function fetchPosts() {
     posts.forEach((post, index) => {
       const slide = document.createElement("div");
       slide.classList.add("slide");
-      slide.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url})`;
-      slide.innerHTML = `
+
+      const imageSection = document.createElement("div");
+      imageSection.classList.add("image-section");
+      imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url})`;
+
+      const textSection = document.createElement("div");
+      textSection.classList.add("text-section");
+      textSection.innerHTML = `
         <h2>${post.title.rendered}</h2>
         <p>${post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "")}</p>
       `;
+
+      slide.appendChild(imageSection);
+      slide.appendChild(textSection);
       slider.appendChild(slide);
     });
 

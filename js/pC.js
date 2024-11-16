@@ -24,6 +24,7 @@ async function submitComment(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Basic ${encodedAuth}`, // Add Basic Auth header
       },
       body: JSON.stringify({
         post: postId,
