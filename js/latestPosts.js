@@ -5,7 +5,6 @@ async function latestPosts() {
   try {
     const response = await fetch(blogUrlBase + "?per_page=4");
     const postList = await response.json();
-    console.log({ postList });
 
     //CREATE DIV
     const sideBar = document.querySelector(".sidebar");
@@ -30,7 +29,7 @@ async function latestPosts() {
       sideBar.appendChild(lastPostContainer);
     });
   } catch (error) {
-    document.getElementsByClassName("sidebar").innerHTML += message;
+    document.getElementsByClassName("sidebar").innerHTML = message;
   }
 }
 

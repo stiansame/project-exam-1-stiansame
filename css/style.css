@@ -225,6 +225,7 @@ header {
     position: relative;
 }
 
+.catListContainer,
 .latestPostContainer,
 .allComments {
     margin-top: 1rem;
@@ -237,6 +238,7 @@ header {
     }
 }
 
+.catListContainer,
 .latestPostContainer {
     padding: 2rem 1rem 2rem 2rem;
     background-color: var(--comment-bg);
@@ -248,13 +250,19 @@ header {
     rotate: -2deg;
 }
 
+#categoriesContainer {
+    rotate: 2deg;
+}
+
 #blogpage {
     grid-template-columns: 2fr 1fr;
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
     grid-area: 2/2/3/3;
-
+    gap: 1rem;
 }
 
 .comment {
@@ -346,6 +354,7 @@ header {
 
 }
 
+.catListContainer::after,
 .latestPostContainer::after,
 #contactForm:after,
 .allComments::after,
