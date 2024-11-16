@@ -225,6 +225,7 @@ header {
     position: relative;
 }
 
+.latestPostContainer,
 .allComments {
     margin-top: 1rem;
 
@@ -241,7 +242,10 @@ header {
     background-color: var(--comment-bg);
     border-bottom-right-radius: 60px 10px;
     position: relative;
+}
 
+#lastPostContainer {
+    rotate: -2deg;
 }
 
 #blogpage {
@@ -250,6 +254,7 @@ header {
 
 .sidebar {
     grid-area: 2/2/3/3;
+
 }
 
 .comment {
@@ -258,7 +263,7 @@ header {
     border-bottom-right-radius: 225px 15px;
     border-bottom-left-radius: 15px 255px;
 
-    border: solid 2px #002b59;
+    border: solid 2px fuchsia;
     padding: .5rem;
     ;
 }
@@ -343,7 +348,7 @@ header {
 
 .latestPostContainer::after,
 #contactForm:after,
-.comment::after,
+.allComments::after,
 .blog:after,
 .shortBlog:after {
     content: "";
@@ -408,7 +413,13 @@ footer {
     position: sticky;
     top: 100%;
     margin: 2rem -1rem 0;
+
+    a {
+        color: #fff;
+    }
 }
+
+
 
 .headerContainer,
 .footerContainer {

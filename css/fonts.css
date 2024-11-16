@@ -61,7 +61,7 @@ h2 strong {
         left: -0.5rem;
         right: -0.5rem;
         height: 0.75rem;
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
+        background-image: url('../images/underline3.svg');
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 1rem;
@@ -85,4 +85,16 @@ h2 strong {
 .contentContainer {
     font-family: "Roboto Condensed", sans-serif;
     line-height: 1.5;
+}
+
+
+a {
+    text-decoration: none;
+    color: #690558;
+}
+
+a:hover {
+    font-style: italic;
+    font-weight: bolder;
+    color: fuchsia;
 }
