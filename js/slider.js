@@ -1,4 +1,4 @@
-import { blogUrlBase } from "./script.js";
+import { postsUrl } from "../js/constants/apiUrls.js";
 
 const slider = document.querySelector(".slider");
 const leftArrow = document.querySelector(".left-arrow");
@@ -10,7 +10,7 @@ let slideInterval;
 // Fetch posts from WordPress API
 async function fetchPosts() {
 	try {
-		const response = await fetch(blogUrlBase + "?_embed&per_page=4");
+		const response = await fetch(postsUrl + "?_embed&per_page=4");
 		const posts = await response.json();
 		loaderRemove();
 		posts.forEach((post, index) => {
