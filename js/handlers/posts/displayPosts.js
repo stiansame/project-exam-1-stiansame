@@ -1,9 +1,11 @@
 import { fetchPosts } from "../../api/posts/fetchPosts.js";
-import { renderBlogList } from "../../ui/renderBlogList.js";
+import { createPosts } from "../../ui/posts/createPosts.js";
+import { getBlogListContainer } from "../../constants/containers.js";
 
-export function displayPosts() {
-	document.addEventListener("DOMContentLoaded", async () => {
-		const posts = await fetchPosts();
-		renderBlogList();
-	});
+export async function displayPosts() {
+  const posts = await fetchPosts();
+  const container = getBlogListContainer();
+  if (container && posts?.length) {
+    createPosts(posts, container);
+  }
 }
