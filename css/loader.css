@@ -2,6 +2,7 @@
     animation: rotate 1s infinite;
     height: 50px;
     width: 50px;
+    justify-self: center;
 }
 
 .loader:before,
