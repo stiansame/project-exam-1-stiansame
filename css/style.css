@@ -495,16 +495,6 @@ footer {
 .aboutContainer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3 auto);
-
-
-    img {
-        margin: unset;
-        object-fit: contain;
-        min-width: 100%;
-        min-height: 100%;
-        object-position: top center;
-
-    }
 }
 
 .about {
@@ -516,7 +506,16 @@ footer {
 }
 
 .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 
 }
 
