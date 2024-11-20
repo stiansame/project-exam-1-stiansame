@@ -1,15 +1,13 @@
-import {
-  collectImagesToContainer,
-  placeImageContainerRandomly,
-} from "./gatherImages.js";
+import { collectImagesToContainer, placeImageContainerRandomly } from "./gatherImages.js";
+import { setupImageModal } from "./setupImageModal.js";
 
 export function renderPost(postData, postId) {
-  const { title, content, categories, date, author } = postData;
+	const { title, content, categories, date, author } = postData;
 
-  document.title = `BBB Blog | ${title}`;
+	document.title = `BBB Blog | ${title}`;
 
-  const postContainer = document.getElementById("postContainer");
-  postContainer.innerHTML = `
+	const postContainer = document.getElementById("postContainer");
+	postContainer.innerHTML = `
     <div class="blog">
       <h1>${title}</h1>
       <div class="cat">${categories}</div>
@@ -22,6 +20,7 @@ export function renderPost(postData, postId) {
     </div>
   `;
 
-  collectImagesToContainer();
-  placeImageContainerRandomly();
+	collectImagesToContainer();
+	placeImageContainerRandomly();
+	setupImageModal();
 }
