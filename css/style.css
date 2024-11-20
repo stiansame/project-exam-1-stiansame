@@ -628,12 +628,10 @@ footer {
         grid-template-columns: 2fr 1fr;
     }
 
-    /* .sidebar {
-    display: flex;
-    flex-direction: column;
-    grid-area: 2/2/3/3;
-    gap: 1rem;
-} */
+    .sidebar {
+        grid-area: 2/2/3/3;
+
+    }
 
     #postCommentContainerWrapper {
         order: 3;
