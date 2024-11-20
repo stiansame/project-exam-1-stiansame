@@ -23,7 +23,7 @@ input[type=email] {
 }
 
 button[type=submit],
-textarea[name=content] {
+textarea {
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 225px;
     border-bottom-right-radius: 225px 15px;
@@ -31,14 +31,15 @@ textarea[name=content] {
     border: solid 2px fuchsia;
 }
 
-textarea[name=content] {
+textarea {
     resize: none;
-    max-width: 90%;
+    max-width: 100%;
     field-sizing: content;
     min-height: 5rem;
     background-image: url(../images/icons/comment-regular.svg);
     background-position: .5rem 1rem;
     padding-left: 2rem;
+    line-height: 1.2;
 }
 
 textarea:focus,
@@ -53,7 +54,7 @@ button[type=submit] {
     background-size: calc(10%);
     background-position: .5rem center;
     background-color: fuchsia;
-    max-width: 90%;
+    max-width: 100%;
     transition: transform 0.3s ease-in-out;
     transform: scale(1);
     overflow: hidden;
@@ -63,4 +64,16 @@ button[type=submit] {
 button[type=submit]:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reply-btn {
+    all: unset;
+    background-color: transparent;
+    background-image: url(../images/icons/reply-solid_fucshia.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    background-size: calc(40%);
+    padding: .7rem;
+
 }

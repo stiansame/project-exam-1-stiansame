@@ -71,29 +71,31 @@
         </div>
     </header>
     <main>
-        <div class="contactContainer">
-            <h1>Contact me</h1>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <span class="error" id="nameError"></span><br>
+        <div class="contactForm">
+            <div class="contactFormWrapper">
+                <div class="contactFormContainer">
+                    <h2><strong>If you need to contact me...</strong></h2>
+                    <form id="contactForm">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <span class="error" id="nameError"></span><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error" id="emailError"></span><br>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <span class="error" id="emailError"></span><br>
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-                <span class="error" id="subjectError"></span><br>
+                        <input type="text" id="subject" name="subject" placeholder="Your subject" required>
+                        <span class="error" id="subjectError"></span><br>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <span class="error" id="messageError"></span><br>
+                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                        <span class="error" id="messageError"></span><br>
 
-                <button type="submit">Send</button>
-                <div id="formMessage"></div>
-            </form>
+                        <button type="submit">Send</button>
+                        <div id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
         </div>
+
+
     </main>
     <footer>
         <div class="footerContainer">

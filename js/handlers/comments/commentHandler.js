@@ -13,15 +13,16 @@ export function buildCommentHTML(comment, postId) {
     <div class="blogAuthor">
       <img class="avatar" src="${comment.author_avatar_urls[24]}">
       <p><strong>${comment.author_name}</strong> | ${formattedDate}</p>
-    </div>
-    <p>${comment.content.rendered}</p>
     <button class="reply-btn" data-comment-id="${comment.id}" data-post-id="${postId}">Reply</button>
+      </div>
+    <p>${comment.content.rendered}</p>
+
   `;
 }
 
 export function createReplyForm(postId, parentCommentId) {
   return `
-    <form class="reply-form" data-post-id="${postId}" data-parent-id="${parentCommentId}">
+    <form class="commentForm reply" data-post-id="${postId}" data-parent-id="${parentCommentId}">
       <input type="text" name="author_name" placeholder="Your Name" required>
       <input type="email" name="author_email" placeholder="Your Email" required>
       <textarea name="content" placeholder="Your Reply" required></textarea>
@@ -94,7 +95,7 @@ export function setupCommentReplyListeners(postId) {
       const commentElement = e.target.closest(".comment");
 
       // Remove any existing reply forms
-      const existingForms = document.querySelectorAll(".reply-form");
+      const existingForms = document.querySelectorAll(".commentForm");
       existingForms.forEach((form) => form.remove());
 
       // Create and append reply form
@@ -103,12 +104,12 @@ export function setupCommentReplyListeners(postId) {
     }
 
     if (e.target.classList.contains("cancel-reply")) {
-      e.target.closest(".reply-form").remove();
+      e.target.closest(".commentForm").remove();
     }
   });
 
   document.addEventListener("submit", async (e) => {
-    if (e.target.classList.contains("reply-form")) {
+    if (e.target.classList.contains("commentForm")) {
       e.preventDefault();
       const formData = new FormData(e.target);
 

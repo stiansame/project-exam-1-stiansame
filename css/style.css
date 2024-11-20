@@ -231,7 +231,7 @@ header {
     grid-area: 2/1/2/2;
 }
 
-#contactForm,
+
 .allComments,
 .blog {
     display: flex;
@@ -264,7 +264,7 @@ header {
 }
 
 
-
+.contactFormContainer,
 .postCommentContainer,
 .catListContainer,
 .latestPostContainer,
@@ -279,6 +279,8 @@ header {
     }
 }
 
+
+.contactFormContainer,
 .postCommentContainer,
 .catListContainer,
 .latestPostContainer {
@@ -288,6 +290,7 @@ header {
     position: relative;
 }
 
+.contactFormWrapper,
 #postCommentContainerWrapper,
 #lastPostContainer {
     rotate: -2deg;
@@ -303,7 +306,9 @@ header {
     order: 3;
 }
 
-#commentForm {
+
+#contactForm,
+.commentForm {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -332,7 +337,7 @@ header {
     border-bottom-left-radius: 15px 255px;
 
     border: solid 2px fuchsia;
-    padding: .5rem;
+    padding: 1rem;
     ;
 }
 
@@ -409,10 +414,11 @@ header {
 
 }
 
+.reply::after,
 .postCommentContainer::after,
 .catListContainer::after,
 .latestPostContainer::after,
-#contactForm:after,
+.contactFormContainer:after,
 .allComments::after,
 .blog:after,
 .shortBlog:after {
@@ -464,6 +470,8 @@ header {
     display: flex;
     gap: 1rem;
     align-items: center;
+
+
 }
 
 .avatar,
@@ -693,7 +701,7 @@ footer {
         grid-area: 1/2/2/3;
     }
 
-    #contactForm,
+
     .allComments,
     .blog {
         display: flex;
