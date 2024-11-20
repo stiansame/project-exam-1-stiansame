@@ -52,8 +52,6 @@ body {
     min-height: 100dvh;
     padding: 0 1rem;
     overflow-x: hidden;
-    display: grid;
-
 }
 
 main {
