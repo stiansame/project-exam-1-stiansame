@@ -1,0 +1,66 @@
+button[type=submit],
+textarea,
+input {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    border: none;
+    border-bottom: 2px solid fuchsia;
+    background-color: transparent;
+    line-height: 2;
+    font-size: large;
+    padding: .5rem;
+    background-repeat: no-repeat;
+    background-position: .5rem center;
+    padding-left: 2rem;
+}
+
+input[type=text] {
+    background-image: url(../images/icons/user-solid.svg);
+}
+
+input[type=email] {
+    background-image: url(../images/icons/at-solid.svg);
+}
+
+button[type=submit],
+textarea[name=content] {
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius: 15px 255px;
+    border: solid 2px fuchsia;
+}
+
+textarea[name=content] {
+    resize: none;
+    max-width: 90%;
+    field-sizing: content;
+    min-height: 5rem;
+    background-image: url(../images/icons/comment-regular.svg);
+    background-position: .5rem 1rem;
+    padding-left: 2rem;
+}
+
+textarea:focus,
+input:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    caret-color: black;
+}
+
+button[type=submit] {
+    background-image: url(../images/icons/paper-plane-regular_white.svg);
+    background-size: calc(10%);
+    background-position: .5rem center;
+    background-color: fuchsia;
+    max-width: 90%;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+    overflow: hidden;
+    color: #fff;
+}
+
+button[type=submit]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

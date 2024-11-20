@@ -178,3 +178,59 @@ export async function refreshComments(postId) {
     return false;
   }
 }
+
+export function setupMainCommentFormListener(postId) {
+  const commentForm = document.getElementById("commentForm");
+  const responseMessage = document.getElementById("responseMessage");
+
+  commentForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      // Disable submit button
+      const submitButton = e.target.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+
+      const commentData = {
+        post: parseInt(postId),
+        parent: 0, // Top-level comment
+        author_name: formData.get("author_name"),
+        author_email: formData.get("author_email"),
+        content: formData.get("content"),
+      };
+
+      // Submit comment
+      await submitComment(commentData);
+
+      // Refresh comments
+      await refreshComments(postId);
+
+      // Clear form
+      e.target.reset();
+
+      // Show success message
+      responseMessage.textContent = "Comment submitted successfully!";
+      responseMessage.classList.add("success-message");
+      setTimeout(() => {
+        responseMessage.textContent = "";
+        responseMessage.classList.remove("success-message");
+      }, 3000);
+    } catch (error) {
+      console.error("Comment submission error:", error);
+
+      // Show error message
+      responseMessage.textContent =
+        "Failed to submit comment. Please try again.";
+      responseMessage.classList.add("error-message");
+      setTimeout(() => {
+        responseMessage.textContent = "";
+        responseMessage.classList.remove("error-message");
+      }, 3000);
+    } finally {
+      // Re-enable submit button
+      const submitButton = e.target.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
+}

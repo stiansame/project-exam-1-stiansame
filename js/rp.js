@@ -3,6 +3,7 @@ import { formatPostData } from "./ui/posts/postFormatter.js";
 import {
   setupCommentReplyListeners,
   refreshComments,
+  setupMainCommentFormListener,
 } from "./handlers/comments/commentHandler.js";
 import { renderPost } from "./ui/posts/postRenderer.js";
 import { createMessage } from "./message.js";
@@ -21,6 +22,7 @@ async function initializeBlogPost() {
 
     // Setup reply functionality
     setupCommentReplyListeners(postId);
+    setupMainCommentFormListener(postId);
   } catch (error) {
     console.error("Error initializing blog post:", error);
     document.getElementById("postContainer").innerHTML = createMessage();

@@ -4,6 +4,7 @@
 @import url(./slider.css);
 @import url(./modal.css);
 @import url(./fonts.css);
+@import url(comments.css);
 
 
 /* universal */
@@ -142,7 +143,7 @@ nav a {
     color: rgb(105, 4, 88);
     text-decoration: none;
     display: block;
-    font-size: clamp(1.8rem, 3vw, 2rem);
+    font-size: clamp(1.8rem, 2vw, 2rem);
 }
 
 .active,
@@ -225,6 +226,7 @@ header {
     position: relative;
 }
 
+.postCommentContainer,
 .catListContainer,
 .latestPostContainer,
 .allComments {
@@ -238,6 +240,7 @@ header {
     }
 }
 
+.postCommentContainer,
 .catListContainer,
 .latestPostContainer {
     padding: 2rem 1rem 2rem 2rem;
@@ -246,15 +249,27 @@ header {
     position: relative;
 }
 
+#postCommentContainerWrapper,
 #lastPostContainer {
     rotate: -2deg;
 }
+
+#postCommentContainerWrapper {
+    order: 3;
+}
+
 
 #categoriesContainer {
     rotate: 2deg;
 }
 
-#blogpage {
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.blogpage {
     grid-template-columns: 2fr 1fr;
 }
 
@@ -263,6 +278,10 @@ header {
     flex-direction: column;
     grid-area: 2/2/3/3;
     gap: 1rem;
+}
+
+#singlePost {
+    grid-area: 1/2/2/3;
 }
 
 .comment {
@@ -274,11 +293,6 @@ header {
     border: solid 2px fuchsia;
     padding: .5rem;
     ;
-}
-
-.postCommentContainer {
-    display: flex;
-    flex-direction: column;
 }
 
 .imageContainer {
@@ -354,6 +368,7 @@ header {
 
 }
 
+.postCommentContainer::after,
 .catListContainer::after,
 .latestPostContainer::after,
 #contactForm:after,
@@ -485,15 +500,16 @@ footer {
         grid-area: 1/2/2/4;
         z-index: 100;
         font-family: 'Roboto Condensed';
+    }
 
-
+    nav a {
+        font-size: 1.8rem;
     }
 
     nav ul {
         display: flex;
         justify-content: right;
         align-items: center;
-        font-size: 2rem;
         z-index: 2;
         column-gap: 1rem;
 
