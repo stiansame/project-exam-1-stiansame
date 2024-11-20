@@ -36,7 +36,6 @@
 
 html {
     margin: 0 auto;
-    /* max-width: 1200px; */
     font-size: 14px;
     background-color: var(--menu-bg);
     background: linear-gradient(#ffffff 0%, #f8d4f2 75%);
@@ -50,10 +49,11 @@ html {
 
 body {
     margin: 0 auto;
-    /* max-width: 1200px; */
     min-height: 100dvh;
     padding: 0 1rem;
     overflow-x: hidden;
+    display: grid;
+
 }
 
 main {
