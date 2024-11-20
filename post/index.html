@@ -93,13 +93,13 @@
         <div class="sidebar" id="singlePost">
             <!--JAVASCRIPT in here-->
             <div id="postCommentContainerWrapper">
-                <div class="postCommentContainer">
+                <div id="postCommentContainer">
                     <h2><strong>write your own comment...</strong></h2>
-                    <form class="commentForm" id="commentForm">
+                    <form id="commentForm">
                         <input type="text" name="author_name" placeholder="Your Name" required />
                         <input type="email" name="author_email" placeholder="Your Email" required />
                         <textarea name="content" placeholder="Your Comment" required></textarea>
-                        <button type="submit">Post Comment</button>
+                        <button type="submit"><i class="fa-regular fa-paper-plane"></i></button>
                     </form>
                     <div id="responseMessage"></div>
                 </div>
@@ -116,7 +116,7 @@
             </div>
         </div>
     </footer>
-    <a class="to-top" href="#"><i class="fa-solid fa-up-long" style="color: #ffffff"></i></a>
+
     <!--MODAL HERE-->
     <div id="imageModal" class="modal hidden">
         <div class="modal-content">
