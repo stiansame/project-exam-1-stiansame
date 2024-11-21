@@ -73,12 +73,12 @@ h2 strong {
     font-family: "Roboto Condensed", sans-serif;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: min(max(1.8rem, 2vw), 2.8rem);
         margin-bottom: 1rem;
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: min(max(1.2rem, 2vw), 2rem);
         line-height: 1.5;
     }
 }

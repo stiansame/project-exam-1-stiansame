@@ -52,7 +52,7 @@ body {
     min-height: 100dvh;
     padding: 0 1rem;
     overflow-x: hidden;
-    justify-content: center;
+
 }
 
 main {
@@ -60,6 +60,7 @@ main {
     display: grid;
     justify-self: center;
     gap: 1rem;
+    margin: 0 auto;
 
 }
 
