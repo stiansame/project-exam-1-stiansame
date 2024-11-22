@@ -35,11 +35,14 @@ async function displayPosts() {
 
 			// Create h2 and add to link
 			const postTitle = document.createElement("h2");
-			postTitle.textContent = post.title.rendered;
+			postTitle.textContent = post.title.rendered.replace(/&amp;/g, "&");
 			postLink.appendChild(postTitle);
 
 			const excerpt = document.createElement("p");
-			excerpt.textContent = post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "");
+			excerpt.textContent = post.excerpt.rendered
+				.replace(/(<([^>]+)>)/gi, "")
+				.replace(/&amp;/g, "&")
+				.replace(/&hellip;/g, "...");
 
 			textSection.appendChild(postLink);
 			textSection.appendChild(excerpt);
