@@ -5,7 +5,7 @@ export const baseUrl = "https://stianrostad.no/wordpress/wp-json/wp/v2";
 export const postsUrl = `${baseUrl}/posts`;
 
 //bloglist url
-export const blogListUrl = `${postsUrl}?_embed&per_page=10`;
+export const blogListUrl = `${postsUrl}?_embed`;
 
 //comments url
 export const commentsUrl = `${baseUrl}/comments`;

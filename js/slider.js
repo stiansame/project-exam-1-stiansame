@@ -1,4 +1,4 @@
-import { postsUrl } from "../js/constants/apiUrls.js";
+import { fetchPosts } from "../js/api/posts/fetchPosts.js"; // Adjust path as needed
 
 const slider = document.querySelector(".slider");
 const leftArrow = document.querySelector(".left-arrow");
@@ -7,19 +7,24 @@ let currentIndex = 0;
 const intervalTime = 15000;
 let slideInterval;
 
-// Fetch posts from WordPress API
-async function fetchPosts() {
+// Display posts in the slider
+async function displayPosts() {
 	try {
-		const response = await fetch(postsUrl + "?_embed&per_page=4");
-		const posts = await response.json();
+		const posts = await fetchPosts();
+		console.log(posts);
+		if (!posts) {
+			throw new Error("No posts available");
+		}
+
 		loaderRemove();
-		posts.forEach((post, index) => {
+
+		posts.slice(0, 4).forEach((post, index) => {
 			const slide = document.createElement("div");
 			slide.classList.add("slide");
 
 			const imageSection = document.createElement("div");
 			imageSection.classList.add("image-section");
-			imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url})`;
+			imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url})`;
 
 			const textSection = document.createElement("div");
 			textSection.classList.add("text-section");
@@ -35,7 +40,7 @@ async function fetchPosts() {
 
 		startSlider();
 	} catch (error) {
-		console.error("Error fetching posts:", error);
+		console.error("Error displaying posts:", error);
 	}
 }
 
@@ -67,6 +72,12 @@ function resetInterval() {
 	startSlider();
 }
 
+// Remove loader
+function loaderRemove() {
+	let loaderContainer = document.getElementById("loaderHome");
+	loaderContainer.remove();
+}
+
 // Event listeners
 rightArrow.addEventListener("click", () => {
 	nextSlide();
@@ -79,11 +90,4 @@ leftArrow.addEventListener("click", () => {
 });
 
 // Initialize slider
-
-//remove loader
-function loaderRemove() {
-	let loaderContainer = document.getElementById("loaderHome");
-	loaderContainer.remove();
-}
-
-fetchPosts();
+displayPosts();
