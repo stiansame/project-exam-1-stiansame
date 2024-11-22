@@ -129,7 +129,6 @@ export function createCategories(categories) {
 
 async function filterAndDisplayPosts(categoryName) {
 	const blogListContainer = getBlogListContainer();
-	// blogListContainer.innerHTML = "<p>Loading posts...</p>";
 
 	try {
 		// Fetch all posts
@@ -173,29 +172,3 @@ async function loadAllPosts() {
       </div>`;
 	}
 }
-
-/* function renderPosts(posts) {
-	const blogListContainer = getBlogListContainer();
-	blogListContainer.innerHTML = "";
-
-	const postsWrapper = document.createElement("div");
-	postsWrapper.classList.add("posts-grid");
-
-	posts.forEach((post) => {
-		const postElement = document.createElement("article");
-		postElement.classList.add("post-card");
-		postElement.innerHTML = `
-      <h2 class="post-title">${post.title.rendered}</h2>
-      <div class="post-excerpt">
-        ${post.excerpt || post.content.substring(0, 150)}...
-      </div>
-      <div class="post-meta">
-        <span class="post-date">${new Date(post.date).toLocaleDateString()}</span>
-        <a href="../post/index.html?id=${post.id}" class="read-more">Read more</a>
-      </div>
-    `;
-		postsWrapper.appendChild(postElement);
-	});
-
-	blogListContainer.appendChild(postsWrapper);
-} */
