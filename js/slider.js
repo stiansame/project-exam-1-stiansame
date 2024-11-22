@@ -26,12 +26,23 @@ async function displayPosts() {
 			imageSection.classList.add("image-section");
 			imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url})`;
 
+			// Create link element
+			const postLink = document.createElement("a");
+			postLink.href = `../post/index.html?id=${post.id}`; // Use the post's URL
+
 			const textSection = document.createElement("div");
 			textSection.classList.add("text-section");
-			textSection.innerHTML = `
-        <h2>${post.title.rendered}</h2>
-        <p>${post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "")}</p>
-      `;
+
+			// Create h2 and add to link
+			const postTitle = document.createElement("h2");
+			postTitle.textContent = post.title.rendered;
+			postLink.appendChild(postTitle);
+
+			const excerpt = document.createElement("p");
+			excerpt.textContent = post.excerpt.rendered.replace(/(<([^>]+)>)/gi, "");
+
+			textSection.appendChild(postLink);
+			textSection.appendChild(excerpt);
 
 			slide.appendChild(imageSection);
 			slide.appendChild(textSection);
