@@ -60,7 +60,7 @@ export function createCategories(categories) {
 	}
 }
 
-async function ensureBlogPage(categorySlug) {
+export async function ensureBlogPage(categorySlug) {
 	// Check if we're already on the blog page
 	if (window.location.pathname !== "/blog/") {
 		// Redirect to blog page with category
@@ -75,7 +75,7 @@ async function ensureBlogPage(categorySlug) {
 	await filterAndDisplayPosts(categorySlug);
 }
 
-async function filterAndDisplayPosts(categoryName) {
+export async function filterAndDisplayPosts(categoryName) {
 	const blogListContainer = getBlogListContainer();
 
 	try {
@@ -107,7 +107,6 @@ async function filterAndDisplayPosts(categoryName) {
 
 async function loadAllPosts() {
 	const blogListContainer = getBlogListContainer();
-	blogListContainer.innerHTML = "<p>Loading posts...</p>";
 
 	try {
 		const response = await fetch(blogListUrl);
