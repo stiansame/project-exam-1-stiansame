@@ -148,7 +148,7 @@ async function filterAndDisplayPosts(categoryName) {
 			return;
 		}
 
-		renderPosts(filteredPosts);
+		createPosts(filteredPosts);
 	} catch (error) {
 		blogListContainer.innerHTML = `
       <div class="error">
@@ -165,7 +165,7 @@ async function loadAllPosts() {
 	try {
 		const response = await fetch(blogListUrl);
 		const posts = await response.json();
-		renderPosts(posts);
+		createPosts(posts);
 	} catch (error) {
 		blogListContainer.innerHTML = `
       <div class="error">
@@ -174,7 +174,7 @@ async function loadAllPosts() {
 	}
 }
 
-function renderPosts(posts) {
+/* function renderPosts(posts) {
 	const blogListContainer = getBlogListContainer();
 	blogListContainer.innerHTML = "";
 
@@ -198,4 +198,4 @@ function renderPosts(posts) {
 	});
 
 	blogListContainer.appendChild(postsWrapper);
-}
+} */
