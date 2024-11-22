@@ -61,9 +61,9 @@ button {
     align-self: flex-end;
 }
 
-
-.reply-btn,
-button:hover {
+button[type=submit]:hover,
+.reply-btn:hover,
+.cancel-reply:hover {
     transform: scale(1.1);
 
 }
