@@ -93,6 +93,7 @@ button[type=submit]:hover,
 .contactForm {
     display: grid;
     justify-self: center;
+    max-width: 750px;
 }
 
 .contactFormWrapper {

@@ -537,6 +537,21 @@ footer {
     }
 }
 
+
+.contactIntro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin: 2rem 0 2rem 0;
+
+    img {
+        object-position: top;
+    }
+}
+
+
+
+
 .aboutContainer,
 .contentContainer {
     display: grid;

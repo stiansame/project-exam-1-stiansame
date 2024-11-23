@@ -4,6 +4,13 @@
 
 
 
+h2 {
+    padding: .8rem 0 .3rem 0;
+}
+
+
+
+
 .roboto-condensed {
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
@@ -84,7 +91,8 @@ h2 strong {
 }
 
 .aboutContainer,
-.contentContainer {
+.contentContainer,
+.contactIntro {
     font-family: "Roboto Condensed", sans-serif;
     line-height: 1.5;
 }
