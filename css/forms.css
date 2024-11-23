@@ -80,10 +80,21 @@ button[type=submit]:hover,
 }
 
 
-/*--- REPLY-FROM---*/
+/*--- REPLY-FORM---*/
 
 .reply-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+/*---CONTACTFORM---*/
+
+.contactForm {
+    display: grid;
+    justify-self: center;
+}
+
+.contactFormWrapper {
+    max-width: 100%;
 }

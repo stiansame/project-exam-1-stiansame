@@ -614,6 +614,10 @@ footer {
         object-fit: cover;
     }
 
+    .contactFormWrapper {
+        min-width: 600px;
+    }
+
 
 }
 
