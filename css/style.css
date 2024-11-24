@@ -265,6 +265,13 @@ header {
     .blogAuthor {
         order: 3;
     }
+
+}
+
+.allComments {
+    h2 {
+        order: 0;
+    }
 }
 
 
