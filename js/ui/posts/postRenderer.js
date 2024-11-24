@@ -10,6 +10,11 @@ export function renderPost(postData, postId) {
   document.title = `BBB Blog | ${title}`;
 
   const postContainer = document.getElementById("postContainer");
+  const removeLoader = document.getElementById("loaderPost");
+  if (removeLoader) {
+    removeLoader.remove();
+  }
+
   postContainer.innerHTML = `
     <div class="blog">
       <h2>${title}</h2>

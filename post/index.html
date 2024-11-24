@@ -15,7 +15,6 @@
     <link rel="manifest" href="/site.webmanifest">
     <script async src="../js/script.js" type="module"></script>
     <script async src="../js/rp.js" type="module"></script>
-    <script async src="../js/ui/posts/latestPosts.js" type="module"></script>
 
     <!-- Hotjar Tracking Code for Project Exam 1 -->
     <script>
@@ -81,8 +80,10 @@
     </header>
     <main class="blogpage">
         <div class="blogContainer">
+
             <!--JAVASCRIPT API CALL HERE!-->
             <div id="postContainer"></div>
+            <div class="loader" id="loaderPost"></div>
             <div class="allComments">
                 <h2><strong>Comments</strong></h2>
                 <div id="commentsContainer">
@@ -148,7 +149,7 @@
     <!--MODAL HERE-->
     <div id="imageModal" class="modal hidden">
         <div class="modal-content">
-            <img id="modalImage" src="-" alt="Full size image">
+            <img id="modalImage" src="" alt="Full size image">
         </div>
     </div>
 

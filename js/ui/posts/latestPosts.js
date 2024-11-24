@@ -2,7 +2,7 @@ import { message } from "../../script.js";
 import { postsUrl } from "../../constants/apiUrls.js";
 
 //call API to get blogs
-async function latestPosts() {
+export async function latestPosts() {
   try {
     const response = await fetch(postsUrl + "?per_page=4");
     const postList = await response.json();
@@ -33,5 +33,3 @@ async function latestPosts() {
     document.getElementsByClassName("sidebar").innerHTML = message;
   }
 }
-
-latestPosts();
