@@ -1,9 +1,10 @@
-import { blogUrlBase, message } from "./script.js";
+import { message } from "../../script.js";
+import { postsUrl } from "../../constants/apiUrls.js";
 
 //call API to get blogs
 async function latestPosts() {
   try {
-    const response = await fetch(blogUrlBase + "?per_page=4");
+    const response = await fetch(postsUrl + "?per_page=4");
     const postList = await response.json();
 
     //CREATE DIV

@@ -9,98 +9,98 @@ let slideInterval;
 
 // Display posts in the slider
 async function displayPosts() {
-	try {
-		const posts = await fetchPosts();
-		console.log(posts);
-		if (!posts) {
-			throw new Error("No posts available");
-		}
+  try {
+    const posts = await fetchPosts();
+    if (!posts) {
+      throw new Error("No posts available");
+    }
 
-		loaderRemove();
+    loaderRemove();
 
-		posts.slice(0, 4).forEach((post, index) => {
-			const slide = document.createElement("div");
-			slide.classList.add("slide");
+    posts.slice(0, 4).forEach((post, index) => {
+      const slide = document.createElement("div");
+      slide.classList.add("slide");
 
-			const imageSection = document.createElement("div");
-			imageSection.classList.add("image-section");
-			imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url})`;
+      const imageSection = document.createElement("div");
+      imageSection.classList.add("image-section");
+      imageSection.style.backgroundImage = `url(${post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url})`;
 
-			// Create link element
-			const postLink = document.createElement("a");
-			postLink.href = `../post/index.html?id=${post.id}`; // Use the post's URL
+      // Create link element
+      const postLink = document.createElement("a");
+      postLink.href = `../post/index.html?id=${post.id}`; // Use the post's URL
 
-			const textSection = document.createElement("div");
-			textSection.classList.add("text-section");
+      const textSection = document.createElement("div");
+      textSection.classList.add("text-section");
 
-			// Create h2 and add to link
-			const postTitle = document.createElement("h2");
-			postTitle.textContent = post.title.rendered.replace(/&amp;/g, "&");
-			postLink.appendChild(postTitle);
+      // Create h2 and add to link
+      const postTitle = document.createElement("h2");
+      postTitle.textContent = post.title.rendered.replace(/&amp;/g, "&");
+      postLink.appendChild(postTitle);
 
-			const excerpt = document.createElement("p");
-			excerpt.textContent = post.excerpt.rendered
-				.replace(/(<([^>]+)>)/gi, "")
-				.replace(/&amp;/g, "&")
-				.replace(/&hellip;/g, "...");
+      const excerpt = document.createElement("p");
+      excerpt.textContent = post.excerpt.rendered
+        .replace(/(<([^>]+)>)/gi, "")
+        .replace(/&amp;/g, "&")
+        .replace(/&hellip;/g, "...");
 
-			textSection.appendChild(postLink);
-			textSection.appendChild(excerpt);
+      textSection.appendChild(postLink);
+      textSection.appendChild(excerpt);
 
-			slide.appendChild(imageSection);
-			slide.appendChild(textSection);
-			slider.appendChild(slide);
-		});
+      slide.appendChild(imageSection);
+      slide.appendChild(textSection);
+      slider.appendChild(slide);
+    });
 
-		startSlider();
-	} catch (error) {
-		console.error("Error displaying posts:", error);
-	}
+    startSlider();
+  } catch (error) {
+    console.error("Error displaying posts:", error);
+  }
 }
 
 // Move to the next slide
 function nextSlide() {
-	currentIndex = (currentIndex + 1) % slider.childElementCount;
-	updateSlider();
+  currentIndex = (currentIndex + 1) % slider.childElementCount;
+  updateSlider();
 }
 
 // Move to the previous slide
 function prevSlide() {
-	currentIndex = (currentIndex - 1 + slider.childElementCount) % slider.childElementCount;
-	updateSlider();
+  currentIndex =
+    (currentIndex - 1 + slider.childElementCount) % slider.childElementCount;
+  updateSlider();
 }
 
 // Update slider position
 function updateSlider() {
-	slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 // Auto-play slider
 function startSlider() {
-	slideInterval = setInterval(nextSlide, intervalTime);
+  slideInterval = setInterval(nextSlide, intervalTime);
 }
 
 // Reset interval when user manually changes slide
 function resetInterval() {
-	clearInterval(slideInterval);
-	startSlider();
+  clearInterval(slideInterval);
+  startSlider();
 }
 
 // Remove loader
 function loaderRemove() {
-	let loaderContainer = document.getElementById("loaderHome");
-	loaderContainer.remove();
+  let loaderContainer = document.getElementById("loaderHome");
+  loaderContainer.remove();
 }
 
 // Event listeners
 rightArrow.addEventListener("click", () => {
-	nextSlide();
-	resetInterval();
+  nextSlide();
+  resetInterval();
 });
 
 leftArrow.addEventListener("click", () => {
-	prevSlide();
-	resetInterval();
+  prevSlide();
+  resetInterval();
 });
 
 // Initialize slider
