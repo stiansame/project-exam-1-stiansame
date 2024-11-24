@@ -500,6 +500,49 @@ footer {
     }
 }
 
+.some {
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    gap: 1rem;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.icon:hover {
+    border: white solid 3px;
+}
+
+#face {
+    background-color: #29539b;
+    background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+    border-radius: 50%;
+}
+
+#insta {
+    background-color: #f7accf;
+    background-image: linear-gradient(147deg, #f7accf 0%, #ff1053 74%);
+    border-radius: 50%;
+}
+
+#snap {
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+    border-radius: 50%;
+}
+
+#youtube {
+    background-color: #990000;
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    border-radius: 50%;
+}
 
 
 .headerContainer,
@@ -555,7 +598,12 @@ footer {
 }
 
 
-
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 1rem;
+}
 
 .aboutContainer,
 .contentContainer {
