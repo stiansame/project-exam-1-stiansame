@@ -61,6 +61,12 @@ button {
     align-self: flex-end;
 }
 
+#loadMoreBtn {
+    width: 50%;
+    justify-self: center;
+}
+
+#loadMoreBtn:hover,
 #clearForm:hover,
 button[type=submit]:hover,
 .reply-btn:hover,

@@ -320,13 +320,18 @@ header {
 
 .blogpage {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3 auto);
+    grid-template-rows: repeat(4 auto);
+}
+
+.btnContainer {
+    grid-area: 3/1/4/2;
+    display: grid;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
-    grid-area: 3/1/4/2;
+    grid-area: 4/1/5/2;
     gap: 2rem;
 }
 
@@ -639,6 +644,17 @@ footer {
     }
 
 }
+
+
+
+#loadMoreBtn:disabled {
+    background-color: transparent;
+    color: transparent;
+    cursor: not-allowed;
+    border: none;
+}
+
+
 
 /*----------RESPONSIVENESS-------------*/
 @media screen and (min-width:600px) {

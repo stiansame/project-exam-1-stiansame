@@ -1,4 +1,4 @@
-import { fetchPosts } from "../js/api/posts/fetchPosts.js"; // Adjust path as needed
+import { fetchPosts } from "../js/api/posts/fetchPosts.js";
 
 const slider = document.querySelector(".slider");
 const leftArrow = document.querySelector(".left-arrow");

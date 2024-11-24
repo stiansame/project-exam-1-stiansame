@@ -1,8 +1,14 @@
 import { getBlogListContainer } from "../../constants/containers.js";
 
-export function createPosts(posts) {
-  const blogListcontainer = getBlogListContainer();
-  blogListcontainer.innerHTML = "";
+export function createPosts(
+  posts,
+  container = getBlogListContainer(),
+  isAppending = false
+) {
+  if (!isAppending) {
+    container.innerHTML = "";
+  }
+
   posts.forEach((blog) => {
     const categories = blog._embedded["wp:term"][0];
     const catString = categories.map((cat) => cat.name).join(", ");
@@ -13,7 +19,6 @@ export function createPosts(posts) {
     });
     const formatDate = dateTimeFormatter.format(date);
 
-    // Create the main shortBlog div
     const shortBlog = document.createElement("div");
     shortBlog.className = "shortBlog";
 
@@ -85,6 +90,6 @@ export function createPosts(posts) {
     shortBlog.appendChild(authorDiv);
 
     // Append the shortBlog div to the container
-    blogListcontainer.appendChild(shortBlog);
+    container.appendChild(shortBlog);
   });
 }

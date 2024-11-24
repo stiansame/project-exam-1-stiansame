@@ -9,5 +9,5 @@ export const message = createMessage();
 //Display bloglist
 document.readyState === "loading"
   ? document.addEventListener("DOMContentLoaded", displayPosts)
-  : displayPosts(),
+  : displayPosts(true),
   displayCategories();
