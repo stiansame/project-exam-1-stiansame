@@ -8,7 +8,10 @@ h2 {
     padding: .8rem 0 .3rem 0;
 }
 
-
+p {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+    /* font-size: .8vw; */
+}
 
 
 .roboto-condensed {
@@ -109,7 +112,7 @@ a:hover {
     color: fuchsia;
 }
 
-a {
+.content a {
 
     img {
         margin: -1rem -1rem 0;
