@@ -1,12 +1,12 @@
-import { fetchPostData } from "./api/posts/fetchSingle.js";
-import { formatPostData } from "./ui/posts/postFormatter.js";
+import { fetchPostData } from "../../api/posts/fetchSingle.js";
+import { formatPostData } from "./postFormatter.js";
 import {
   setupCommentReplyListeners,
   refreshComments,
   setupMainCommentFormListener,
-} from "./handlers/comments/commentHandler.js";
-import { renderPost } from "./ui/posts/postRenderer.js";
-import { createMessage } from "./message.js";
+} from "../../handlers/comments/commentHandler.js";
+import { renderPost } from "./postRenderer.js";
+import { createMessage } from "../message.js";
 
 async function initializeBlogPost() {
   const postId = getPostIdFromUrl();

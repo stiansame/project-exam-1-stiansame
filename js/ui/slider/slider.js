@@ -1,10 +1,10 @@
 //IMPORTS
-import { displayPosts } from "./ui/slider/displayPosts.js";
+import { displayPosts } from "./displayPosts.js";
 import {
   nextSlide,
   prevSlide,
   resetInterval,
-} from "./handlers/slider/sliderHelpers.js";
+} from "../../handlers/slider/sliderHelpers.js";
 
 const leftArrow = document.querySelector(".left-arrow");
 const rightArrow = document.querySelector(".right-arrow");

@@ -1,5 +1,5 @@
 //imports here
-import { createMessage } from "../js/message.js";
+import { createMessage } from "./ui/message.js";
 import { displayPosts } from "./handlers/posts/displayPosts.js";
 import { displayCategories } from "./handlers/categories/displayCategories.js";
 import { latestPosts } from "./ui/posts/latestPosts.js";
