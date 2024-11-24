@@ -61,6 +61,7 @@ button {
     align-self: flex-end;
 }
 
+#clearForm:hover,
 button[type=submit]:hover,
 .reply-btn:hover,
 .cancel-reply:hover {
@@ -86,6 +87,7 @@ button[type=submit]:hover,
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 /*---CONTACTFORM---*/

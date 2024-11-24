@@ -27,7 +27,7 @@ export function createReplyForm(postId, parentCommentId) {
       <input type="email" name="author_email" placeholder="Your Email" required>
       <textarea name="content" placeholder="Your Reply" required></textarea>
       <button type="submit"><i class="fa-regular fa-paper-plane"></i></button>
-      <button type="button" class="cancel-reply"><i class="fa-regular fa-rectangle-xmark"></i></button>
+      <button type="button" class="cancel-reply"><i class="fa-solid fa-xmark"></i></button>
     </form>
   `;
 }
