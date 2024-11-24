@@ -10,9 +10,14 @@ h2 {
 
 p {
     font-size: clamp(1rem, 1vw, 1.3rem);
-    /* font-size: .8vw; */
 }
 
+
+.contactText p {
+
+    font-size: clamp(1.3rem, 2vw, 2rem);
+
+}
 
 .roboto-condensed {
     font-family: "Roboto Condensed", sans-serif;
