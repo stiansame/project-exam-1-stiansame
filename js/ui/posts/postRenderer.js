@@ -1,7 +1,5 @@
-import {
-  collectImagesToContainer,
-  placeImageContainerRandomly,
-} from "./gatherImages.js";
+import { collectImagesToContainer } from "./imageCollector.js";
+import { placeImageContainerRandomly } from "./imageRandomizer.js";
 import { setupImageModal } from "./setupImageModal.js";
 
 export function renderPost(postData, postId) {
