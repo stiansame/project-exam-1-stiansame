@@ -95,9 +95,14 @@ nav {
     z-index: 5;
 }
 
-
+.catHeader,
 .postHeader {
     padding-bottom: 1rem;
+    background-image: url(../images/icons/circle-chevron-right-solid.svg);
+    background-repeat: no-repeat;
+
+    padding-left: 2rem;
+
 }
 
 .nav_item {
