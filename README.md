@@ -1,6 +1,6 @@
 # NOROFF Project Exam 1 
 
-![image](https://github.com/stiansame/CSM-SemesterProject-1/blob/main/images/gitAsset/project2.jpg)
+![image](https://github.com/stiansame/portfolio1/blob/main/assets/images/project3.jpg?raw=true)
 
 You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
 
