@@ -29,7 +29,7 @@ Contact page.
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:stiansame/CSM-SemesterProject-1.git
+git clone git@github.com:stiansame/project-exam-1-stiansame.git
 ```
 
 
