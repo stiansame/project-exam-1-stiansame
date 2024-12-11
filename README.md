@@ -1,12 +1,19 @@
-# NOROFF Semester Project 1
+# NOROFF Project Exam 1 
 
 ![image](https://github.com/stiansame/CSM-SemesterProject-1/blob/main/images/gitAsset/project2.jpg)
 
-Design a website for an interactive museum called the Community Science museum.
+You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
+
+Home page
+About page
+List of blog posts
+Blog post specific pages
+Contact page.
 
 ## Brief
 
-An interactive science museum called the Community Science Museum is opening in your town/city. Its core target audience is primary and middle school children (ages 7-15) and families with young children. The museum wants an informative, appealing website to attract middle school pupils and their parents. The site should appeal to youngsters without pandering; it should take for granted that the audience is curious and intelligent. The website should be informative and engaging, encouraging viewers to visit the museum. The website should be responsive and easy to use on various devices.
+[link to brief](https://github.com/Noroff-FEU-Assignments/project-exam-1-ta1itha)
+
 
 ## Built With
 
@@ -30,6 +37,9 @@ git clone git@github.com:stiansame/CSM-SemesterProject-1.git
 
 Just a simple website.
 Make sure to update all your paths to match your own repository/website.
+Also make sure to update all API-rest calls. 
+
+JavaScript modal funtion is spesific to wordpress 2024 theme css-naming, and should be modifeid if you choose to use in your own installation.
 
 ## Contributing
 
